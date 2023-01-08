@@ -36,8 +36,8 @@ ul {
   font-family: verdana;
   font-size: 1rem;
   line-height: 1.5; /* WCAG guideline */
-  text-align: justify; /* creates same lenght lines between words */
-  max-width: 65ch; /* sets max charachters in one line */
+  text-align: justify;
+  max-width: 65ch;
 }
 
 section {
