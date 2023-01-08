@@ -1,0 +1,110 @@
+html {
+  font-size: 125%;
+}
+
+body {
+  background-color: rgb(56, 55, 59);
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: verdana;
+  text-align: center;
+}
+
+h1 {
+  color: rgb(227, 227, 227);
+  font-size: 1.9rem;
+  padding: 20%;
+}
+
+h2 {
+  color: rgb(29, 29, 29);
+  font-size: 1.6rem;
+}
+
+h3 {
+  color: rgb(29, 29, 29);
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+p,
+ul {
+  font-family: verdana;
+  font-size: 1rem;
+  line-height: 1.5; /* WCAG guideline */
+  text-align: justify; /* creates same lenght lines between words */
+  max-width: 65ch; /* sets max charachters in one line */
+}
+
+section {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.code-orange {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 164, 36);
+  background-color: rgb(43, 43, 43);
+  padding: 2%;
+  font-size: 0.8rem;
+}
+
+.code-pink {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(254, 204, 255);
+  background-color: rgb(43, 43, 43);
+  padding: 2%;
+  font-size: 0.8rem;
+}
+
+.code-blue {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(160, 188, 253);
+  background-color: rgb(43, 43, 43);
+  padding: 2%;
+  font-size: 0.8rem;
+}
+
+.code-yellow {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 251, 122);
+  background-color: rgb(43, 43, 43);
+  padding: 2%;
+  font-size: 0.8rem;
+}
+
+.card {
+  background-color: rgb(243, 243, 243);
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5%;
+  border-radius: 10px;
+  margin: 3%;
+}
+
+h2:focus {
+  border: solid black 3px;
+  background-color: #ffff07;
+  padding: 2%;
+}
+
+h3:focus {
+  border: solid black 3px;
+  background-color: #ffff07;
+  padding: 1%;
+}
+
+@media screen and (max-width: 992px) {
+  .card {
+    width: 90%;
+  }
+}

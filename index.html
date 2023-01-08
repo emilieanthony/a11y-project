@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML och CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 tabindex="1">HTML och CSS för tillgänglighet</h1>
+    <section>
+      <div class="card">
+        <h2 tabindex="0">1. HTML element har en viktig roll</h2>
+        <h3 tabindex="0">Problem</h3>
+        <p tabindex="0">
+          Informationen presenteras på ett inkorrekt sätt. Exempelvis 
+          kan informationen läsas upp fel av en skärmläsare, inte kunna förstoras eller
+          presenteras med en annan layout. Viktig information kan gå förlorad.
+        </p>
+        <h3 tabindex="0">Lösning</h3>
+        <p tabindex="0">
+         Ange i kod vad sidans olika delar har för roll. Detta är viktigt för att öka chansen att informationen presenteras på
+          ett korrekt sätt. Detta görs genom att använda HTML elementen på rätt
+          sätt.
+          Exempel:
+          <ul>
+          <li tabindex="0">Skapa rubriker med h-element</li>
+          <p class="code-pink" aria-hidden tabindex="0">&lt;h1&gt; h1 rubrik &lt;/h1&gt;</p>
+          <li tabindex="0"> Använd rätt HTML-element när listor görs</li>
+          <p class="code-pink" aria-hidden tabindex="0">&lt;ul&gt; Lista utan numerering &lt;/ul&gt;</p>
+          <li tabindex="0"> Namnge formulärfält med label-elementet </li>
+          <p class="code-pink" aria-hidden tabindex="0">&lt;label&gt; name &lt;/label&gt;</p>
+        </ul>
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2 tabindex="0">2. Ange språk med HTML</h2>
+        <h3 tabindex="0">Problem</h3>
+        <p tabindex="0">
+            När språket inte är angivet i koden riskerar skärmläsaren att inte presenta innehållet rätt, 
+            användaren missar automatisk översättning och kan få en inkorrekt avstavning.
+        </p>
+        <h3 tabindex="0">Lösning</h3>
+        <p tabindex="0">
+            Ange sidans huvudspråk och språkförändringar i koden. För att göra textinnehåll mer läsbart och begripligt ska aktuellt språk anges i HTML-koden. 
+            Detta görs med en språkkod på sidans rot-element och ett lang-attribut.
+        </p>
+        <p class="code-orange" lang="en" aria-hidden tabindex="0">
+            &lt;html <b>lang=”sv”</b>&gt; <br/>
+        </p>
+        <p class="code-orange" aria-hidden tabindex="0">
+            &lt;div <b>lang=”en”</b>&gt; This sentence is written in English &lt;/div&gt;
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2 tabindex="0">3. Komplettera färger med HTML</h2>
+        <h3 tabindex="0">Problem</h3>
+        <p tabindex="0">
+            Viss användare kan inte uppfatta färgskillnader och kan inte förlita sig på informaton som enbart förmedlas genom färg. 
+            Detta kan vara för att de använder skärmläsare, monokrom skärm eller är färgblinda. 
+        </p>
+        <h3 tabindex="0">Lösning</h3>
+        <p tabindex="0">
+            Med hjälp av CSS kan HTML element stylas med färger, men enbart färg ska inte användas för att förmedla information. Komplettera användandet av färg med:
+            <ul>
+                <li tabindex="0">Ikoner</li>
+                <li tabindex="0"><u>Understrykning</u>, <b>fetstil</b> eller annat teckensnitt</li>
+                <li tabindex="0">Skriven text som ger motsvarande information</li>
+            </ul>
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2 tabindex="0">
+          4. Skapa tillräcklig kontrast med CSS
+        </h2>
+        <h3 tabindex="0">Problem</h3>
+        <p tabindex="0">
+            Personer med nedsatt syn har ofta svårt att läsa text med bristande kontrast mot textens bakgrund. 
+            Genom otillräcklig kontrast riskerar viktig information att missas.
+        </p>
+        <h3 tabindex="0">Lösning</h3>
+        <p tabindex="0">
+            Använd tillräcklig kontrast mellan text och bakgrund. Genom CSS kan bakgrundsfärg och teckenfärg bestämmas. De flesta kan läsa brödtext på skärm om skillnaden i ljusintensitet mellan förgrund och bakgrund följer WCAG-standarden (som har förhållandet 4,5:1). 
+            Detta gäller även för ikoner, knappar och formulärfält.
+        </p>
+        <p class="code-yellow" tabindex="0"> .code-yellow { <br>
+            font-family: "Courier New", Courier, monospace; <br>
+            <b>color: rgb(255, 251, 122); <br>
+            background-color: rgb(43, 43, 43); <br></b>
+            padding: 2%; <br>
+            font-size: 16px; <br>
+          }
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2 tabindex="0">5. Gör en logisk tab-ordning</h2>
+        <h3 tabindex="0">Problem</h3>
+        <p tabindex="0">
+        Utan en logisk tab-ordning riskerar fokus att flytta till ett oväntat element. Det kan bli förvirrande och orsaka fel.
+        Den som navigerar med tab-tangenten behöver också få veta tydligt var fokus ligger. Standardmarkeringen är ofta en tunn linje som är svår att se.
+    </p>
+        <h3 tabindex="0">Lösning</h3>
+        <p tabindex="0">
+            För  användare som navigerar med tangentbordet är det viktigt att fokus-ordningen är logisk i förhållande till 
+            hur innehållet presenteras på skärm eller i skärmläsare. Med hjälp av HTML och CSS kan markeringar göras tydliga och visar 
+            vilket element som ligger i fokus med hjälp av tangentbordet. Detta kan göras med en tabindex tag på HTML elementen.
+            Markeringen kan göras ännu tydligare med hjälp av CSS.
+        </p>
+        <p class="code-blue" aria-hidden tabindex="0">
+            h2:<b>focus</b> { <br>
+                border: solid black 3px;  <br>
+                background-color: #ffff07;  <br>
+                padding: 2%;  <br>
+              }
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2 tabindex="0">6. Märk upp formulärfält i koden</h2>
+        <h3 tabindex="0">Problem</h3>
+        <p tabindex="0">
+            Det blir svårare att fylla i formulär för användaren när vilket typ av inmatning som förväntas av användaren inte angetts i koden. 
+            Webbläsaren eller hjälpmedel föreslår heller inte automatisk inmatning.
+        </p>
+        <h3 tabindex="0">Lösning</h3>
+        <p tabindex="0">
+            Ange i de olika HTML elementen vilken typ av innehåll som förväntas. 
+            Här kan attributet autocomplete användas på inmatningsfält. 
+        </p>
+
+        <form tabindex="0">
+            <label for="name">Namn*:</label>
+            <input tabindex="0" id="name" type="text" value="Namn" autocomplete="name" aria-required="true"> 
+            <button tabindex="0">Klar</button>      
+        </form>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2 tabindex="0">7. Presentera innehållet i ordning</h2>
+        <h3 tabindex="0">Problem</h3>
+        <p tabindex="0">
+          Elementen hamnar i oordinng och placering är beroende på skärm. Skärmläsare läser upp information i fel ordning.
+        </p>
+        <h3 tabindex="0">Lösning</h3>
+        <p tabindex="0">
+            Presentera innehållet i ordning på ett meningsfullt sätt för alla. Genom till exempel genom CSS column attributet kan vi se 
+            till att informationen lägger sig rätt oavsett skärm. 
+        </p>
+        <p class="code-pink" tabindex="0">
+            .card { <br>
+                background-color: rgb(243, 243, 243); <br>
+                width: 50%;<br>
+                height: 50%;<br>
+                display: flex;<br>
+                justify-content: center;<br>
+                align-items: center;<br>
+                <b>flex-direction: column;</b><br>
+                padding: 5%;<br>
+                border-radius: 10px;<br>
+                margin: 3%;<br>
+              }
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2 tabindex="0">
+          8. Skapa tillräckligt med avstånd mellan tecken, rader, stycken och ord
+        </h2>
+        <h3 tabindex="0">Problem</h3>
+        <p tabindex="0">
+            Det finns en risk är att innehåll krockar eller gömmer sig bakom annat innehåll när användaren vill påverka avståndet mellan rader, 
+            ord och tecken för att underlätta läsning. 
+        </p>
+        <h3 tabindex="0">Lösning</h3>
+        <p tabindex="0">
+            Placera text i utrymmen som är tillräckligt stora eller anpassar sig efter innehållet. Detta kan göras genom HTML.
+            Ta hänsyn till att texten kan ändra storlek vid absolut positionering av element som riskerar att krocka med texten. 
+            Den relativa enheterna em, rem eller procent kan användas istället för pixlar.
+        </p>
+        <p class="code-blue" tabindex="0">
+            html { <br>
+                <b>font-size: 125%; </b> /*Motsvarar en storlek på 20px, default är 16px*/ <br>
+              } <br>
+        </p>
+        <p class="code-blue" tabindex="0">
+            p, <br>
+            ul {<br>
+                font-family: verdana;<br>
+                <b>font-size: 1rem;</b> /* Motsvarar en storlek på 20px */ <br>
+                line-height: 1.5; /* WCAG guideline */ <br>
+                text-align: justify; <br>
+                max-width: 65ch;  <br>
+            }           
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2 tabindex="0">9. Skapa en flexibel layout</h2>
+        <h3 tabindex="0">Problem</h3>
+        <p tabindex="0">
+            Layouter som inte fungerar vid förstoring eller liten skärm kan skapa problem för användaren som riskerar att missa viktig information.
+            Detta kan också göra det extra svårt för personer med nedsatt synd. Att behöva scrolla i sidled kan också vara besvärligt och försämrar upplevelsen.
+        </p>
+        <h3 tabindex="0">Lösning</h3>
+        <p tabindex="0">
+            Använd responsiv design. I CSS kan media queries skapa olika layouts beroende på skärmstorlek. 
+            Dessa media queries kan kombineras med andra metoder för att skapa flexibilitet mellan de olika brytpunkterna. 
+            Exempel är använda procent med CSS egenskaperna maximal och minimal bredd.
+        </p>
+        <p class="code-orange" tabindex="0">
+            @media screen and (max-width: 992px) { <br>
+                .card { <br>
+                  width: 90%; <br>
+                }
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
